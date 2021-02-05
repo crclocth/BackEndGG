@@ -1,4 +1,34 @@
-function main( ){
-    console.log("hola");
+import mongooseModule from "./modules/mongoose.module";
+import express, { Express, Request, Response } from "express";
+import components from "./components";
+import morgan from "morgan";
+import cors from 'cors';
+
+
+async function main( ){
+
+    const server: Express = express(); 
+    const port: number = 5000;
+
+    server.use(express.json());
+    server.use(morgan("dev"));
+    server.use(cors());
+
+    server.use('/api', ...components); 
+     
+    try{
+        await mongooseModule.connect();
+        console.log("Conexion exitosa");
+
+        server.listen(port,() =>{
+            console.log("Servidor escuchando en: http://localhost:" + port)
+        })
+
+    } catch (error){ 
+        console.log("Conexxion fallida");
+    }
+
 }
+
 export default{ main };
+ 
