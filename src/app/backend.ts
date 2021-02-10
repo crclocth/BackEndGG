@@ -2,8 +2,7 @@ import mongooseModule from "./modules/mongoose.module";
 import express, { Express, Request, Response } from "express";
 import components from "./components";
 import morgan from "morgan";
-import cors from 'cors';
-
+import cors from "cors";
 
 async function main( ){
 
@@ -15,7 +14,7 @@ async function main( ){
     server.use(cors());
 
     server.use('/api', ...components); 
-     
+
     try{
         await mongooseModule.connect();
         console.log("Conexion exitosa");
