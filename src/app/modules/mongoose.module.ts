@@ -1,8 +1,8 @@
 import mongoose, { ConnectionOptions } from "mongoose"
 
 function connect(): Promise<typeof mongoose> {
-  const mongoUri: string = 'mongodb+srv://yamete:pIps2TrmSzEKSHS9@cluster0.tsqq0.mongodb.net/'
-  const databaseName: string = 'backend-Proyecto'
+  const mongoUri: string = ' mongodb+srv://cristian:czxLvav78DyNqseT@cluster0.tsqq0.mongodb.net/'
+  const databaseName: string = 'Geogrow'
 
   const options: ConnectionOptions = {
     useNewUrlParser: true,
