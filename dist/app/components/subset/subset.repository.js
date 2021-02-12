@@ -23,6 +23,11 @@ function getSubsetById(id) {
         return subset_schema_1.default.findOne({ _id: id });
     });
 }
+function getAllSetSubsets(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return subset_schema_1.default.find({ _id: id });
+    });
+}
 function addSubset(user) {
     return __awaiter(this, void 0, void 0, function* () {
         return subset_schema_1.default.create(user);
@@ -38,4 +43,4 @@ function patchSubset(_id, user) {
         return subset_schema_1.default.findByIdAndUpdate(_id, user);
     });
 }
-exports.default = { addSubset, getSubset, getSubsetById, deleteSubset, patchSubset };
+exports.default = { addSubset, getSubset, getSubsetById, deleteSubset, patchSubset, getAllSetSubsets };

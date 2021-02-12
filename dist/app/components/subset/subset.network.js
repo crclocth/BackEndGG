@@ -40,6 +40,19 @@ router.get("/:id", function (req, res) {
         }
     });
 });
+router.get("/:set", function (req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const set = req.params['set'];
+        try {
+            const result = yield subset_controller_1.default.getAllSetSubsets(set);
+            response_module_1.default.success(req, res, result);
+        }
+        catch (error) {
+            console.log(error);
+            response_module_1.default.error(req, res, "Error desconocido");
+        }
+    });
+});
 router.post("/add", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const body = req.body;

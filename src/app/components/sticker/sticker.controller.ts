@@ -20,8 +20,6 @@ function deleteSticker(id: string) {
 
 function addSticker(sticker: Sticker): Promise<Sticker>{
 
-    sticker._idSector = sticker._idSector?.toLowerCase();
-    sticker.sticker = sticker.sticker?.toLowerCase();
     return stickerRepository.addSticker(sticker);
 }
 

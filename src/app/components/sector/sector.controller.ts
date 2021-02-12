@@ -19,12 +19,6 @@ function deleteSector(id: string) {
 }
 
 function addSector(sector: Sector): Promise<Sector>{
-
-    sector._id = sector._id?.toLowerCase();
-    sector.name = sector.name?.toLowerCase();
-    sector.crop = sector.crop?.toLowerCase();
-    sector.recommendation = sector.recommendation?.toLowerCase();
-    sector.greenhouseId = sector.greenhouseId?.toLowerCase();
     return sectorRepository.addSector(sector);
 }
 
