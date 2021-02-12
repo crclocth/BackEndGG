@@ -11,6 +11,11 @@ function getSubsetById(id: string): Promise<Subset | null>{
     return subsetRepository.getSubsetById(id);
 }
 
+function getAllSetSubsets(id: string): Promise<Subset[]>{
+    return subsetRepository.getAllSetSubsets(id);
+}
+
+
 function patchSubset(id: string, subset: Partial<Subset>): Promise<Partial<Subset | null>>{
     return subsetRepository.patchSubset(id, subset);
 }
@@ -20,12 +25,7 @@ function deleteSubset(id: string) {
 }
 
 function addSubset(subset: Subset): Promise<Subset>{
-
-    subset._id = subset._id?.toLowerCase();
-    subset.sticker = subset.sticker?.toLowerCase();
-    subset.subsetName = subset.subsetName?.toLowerCase();
-    subset.sectorId = subset.sectorId?.toLowerCase();
     return subsetRepository.addSubset(subset);
 }
 
-export default { addSubset, getSubset, getSubsetById, patchSubset, deleteSubset};
+export default { addSubset, getSubset, getSubsetById, patchSubset, deleteSubset, getAllSetSubsets};

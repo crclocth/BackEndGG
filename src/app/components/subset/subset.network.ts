@@ -29,6 +29,18 @@ router.get("/:id", async function(req: Request, res: Response){
     }
 });
 
+router.get("/:set", async function(req: Request, res: Response){
+    const set: string = req.params['set'];
+    try {
+        const result: Subset[] = await subsetController.getAllSetSubsets(set);
+        responseModule.success(req,res,result);
+
+    } catch (error) {
+        console.log(error);
+        responseModule.error(req,res,"Error desconocido");
+    }
+});
+
 router.post("/add", async function(req: Request, res: Response){
 
     const body: Subset = req.body;
