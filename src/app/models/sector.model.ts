@@ -17,4 +17,5 @@ export interface Sector{
     modifiedAt?: Date;
     //Propios
     subsets?: Subset[];
+    subsetCount?: number;
 }

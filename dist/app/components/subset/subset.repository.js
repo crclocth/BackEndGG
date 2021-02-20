@@ -23,9 +23,10 @@ function getSubsetById(id) {
         return subset_schema_1.default.findOne({ _id: id });
     });
 }
-function getAllSetSubsets(id) {
+function getAllSetSubsets(sasdasectorId) {
     return __awaiter(this, void 0, void 0, function* () {
-        return subset_schema_1.default.find({ _id: id });
+        return subset_schema_1.default.find({ sectorId: sasdasectorId,
+        });
     });
 }
 function addSubset(user) {

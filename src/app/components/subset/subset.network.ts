@@ -29,7 +29,7 @@ router.get("/:id", async function(req: Request, res: Response){
     }
 });
 
-router.get("/:set", async function(req: Request, res: Response){
+router.get("/all/:set", async function(req: Request, res: Response){
     const set: string = req.params['set'];
     try {
         const result: Subset[] = await subsetController.getAllSetSubsets(set);

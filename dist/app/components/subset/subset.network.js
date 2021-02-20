@@ -40,7 +40,7 @@ router.get("/:id", function (req, res) {
         }
     });
 });
-router.get("/:set", function (req, res) {
+router.get("/all/:set", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const set = req.params['set'];
         try {
