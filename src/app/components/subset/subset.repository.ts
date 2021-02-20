@@ -9,8 +9,10 @@ async function getSubsetById(id: string): Promise<Subset | null>{
     return subsetSchema.findOne({ _id: id });
 }
 
-async function getAllSetSubsets(id: string): Promise<Subset[]>{
-    return subsetSchema.find({ _id: id });
+async function getAllSetSubsets(sasdasectorId: string): Promise<Subset[]>{
+    return subsetSchema.find({ sectorId: 
+         sasdasectorId,
+ });
 }
 
 async function addSubset(user: Subset): Promise<Subset>{    

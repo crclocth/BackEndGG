@@ -15,6 +15,9 @@ const definition = {
     users: { type: String, required: false },
     createdAt: { type: Date, required: false },
     modifiedAt: { type: Date, required: false },
+    //Propios
+    //subsets: { type: subset, required: false},
+    subsetCount: { type: Number, required: false },
 };
 const schema = new mongoose_1.Schema(definition);
 exports.default = mongoose_1.model('Sector', schema, 'sector');

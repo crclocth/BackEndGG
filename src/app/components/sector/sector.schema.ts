@@ -19,6 +19,7 @@ const definition: Partial<Record<keyof Sector, any>> ={
     modifiedAt: { type: Date, required: false},
     //Propios
     //subsets: { type: subset, required: false},
+    subsetCount: { type: Number, required: false},
 
 };
 const schema: Schema<Sector> = new Schema(definition);
